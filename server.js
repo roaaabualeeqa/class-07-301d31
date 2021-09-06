@@ -1,5 +1,6 @@
 'use strict';
 
+require('dotenv').config(); //to import dotenv
 const express = require('express'); //import express
 const cors = require('cors'); //import cors
 const pockData = require('./assets/data.json');
@@ -7,7 +8,7 @@ const pockData = require('./assets/data.json');
 const server = express();
 server.use(cors()); // make my server opened for any client
 
-const PORT = 3010;
+const PORT = process.env.PORT;
 
 // http://localhost:3010/
 server.get('/',(req,res)=>{
